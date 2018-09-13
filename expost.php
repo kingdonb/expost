@@ -28,7 +28,7 @@ function expost_update_self() {
     return; 
 
   foreach ($results as $p) {
-    add_post_meta($p->ID, 'expost_source_url', "http://padm.us/beemblog-{$p->meta_value}", true);
+    add_post_meta($p->ID, 'expost_source_url', "https://etherpad.teamhephy.info/p/beemblog-{$p->meta_value}", true);
     //delete_post_meta($p->ID, 'expost_slug');
   }
 }
@@ -160,7 +160,7 @@ function expost_fetch_post_contents( $source ) {
   $data = array();
 
   $ep = basename( $source ); 
-  $expost_url = "http://yootles.com/expost/$ep?htmlwrap=0&htmltitle=0";
+  $expost_url = "https://wp.teamhephy.info/expost/expost.php?htmlwrap=0&htmltitle=0&pad=$ep";
   return file_get_contents($expost_url);
 
 }
